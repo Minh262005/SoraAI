@@ -70,7 +70,7 @@ const CloseButton = styled.button`
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -134,8 +134,9 @@ const VideoDetail: React.FC<VideoDetailProps> = ({ videoUrl, title, prompt, onCl
         <VideoContainer>
           <VideoPlayer
             src={videoUrl}
-            controls
-            autoPlay
+            autoPlay 
+              loop 
+              muted 
           />
         </VideoContainer>
         {prompt && (

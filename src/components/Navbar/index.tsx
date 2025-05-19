@@ -48,7 +48,7 @@ const NavbarLogo = styled.a`
 `;
 
 const LogoImage = styled.img`
-  width: 32px; /* Điều chỉnh kích thước logo */
+  width: 32px; 
   height: 32px;
   object-fit: contain;
   transition: opacity 0.3s ease;
@@ -57,13 +57,13 @@ const LogoImage = styled.img`
 const NavbarIconButton = styled.button<{ $active?: boolean }>`
   width: 15px;
   height:15px;
-  margin-left: 46px;
+  margin-left: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  color: ${(props) => (props.$active ? '#000' : '#666')};
+  color: ${(props) => (props.$active ? '#666' : '#666')};
   border-radius: 6px;
   transition: all 0.2s;
 
@@ -83,8 +83,9 @@ const NavbarLoginButton = styled.button<{ $active?: boolean }>`
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: all 0.15s ease;
+  background: #0000000A;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
@@ -113,11 +114,10 @@ const SearchIcon = () => (
 const Navbar: React.FC<NavbarProps> = ({ onSidebarToggle, isSidebarOpen }) => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [showLogo, setShowLogo] = useState(false); // State để kiểm soát hiển thị logo hay chữ
+  const [showLogo, setShowLogo] = useState(false); 
 
   useEffect(() => {
     const handleScroll = () => {
-      // Nếu cuộn xuống quá 50px, hiển thị logo, ngược lại hiển thị chữ
       if (window.scrollY > 50) {
         setShowLogo(true);
       } else {
@@ -125,10 +125,8 @@ const Navbar: React.FC<NavbarProps> = ({ onSidebarToggle, isSidebarOpen }) => {
       }
     };
 
-    // Thêm sự kiện scroll
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup để tránh memory leak
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

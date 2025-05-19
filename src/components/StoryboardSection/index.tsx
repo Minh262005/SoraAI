@@ -51,7 +51,7 @@ const Title = styled.div`
 const MainTitle = styled.h2`
   color: #000;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.3;
   margin: 0;
 `;
@@ -74,7 +74,6 @@ const ContentWrapper = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
     gap: 64px;
   }
@@ -83,7 +82,7 @@ const ContentWrapper = styled.div`
 const StoryboardGrid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 5px;
   width: 100%;
   max-width: 220px;
 `;
@@ -95,7 +94,6 @@ const StoryCard = styled.div<{ $selected?: boolean }>`
   padding: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: ${props => (props.$selected ? '0 0 0 2px #000' : 'none')};
   outline: none;
 
   &:hover {
@@ -189,8 +187,8 @@ const StoryboardSection: React.FC = () => {
           Storyboard
         </IconLabel>
         <Title>
-          <MainTitle>Organize and edit unique sequence of your videos</MainTitle>
-          <SubTitle>on a personal timeline.</SubTitle>
+          <MainTitle>Organize and edit unique sequence of your videos on a personal timeline.</MainTitle>
+          <SubTitle></SubTitle>
         </Title>
       </SectionTitle>
 

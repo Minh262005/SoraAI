@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-// Các styled components giữ nguyên
 const Container = styled.section`
   text-align: center;
   background: #fff;
@@ -18,6 +17,12 @@ const SectionTitle = styled.div`
   margin-bottom: 48px;
 `;
 
+const TitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
 const IconWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -27,15 +32,15 @@ const IconWrapper = styled.div`
   opacity: 0.7;
 `;
 
-const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+const TitleText = styled.h3`
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  color: #666;
 `;
 
 const MainTitle = styled.h2`
-  font-size: 32px;
+  font-size: 30px;
   color: #000;
   font-weight: 450;
   margin: 0;
@@ -98,8 +103,8 @@ const LoopSection: React.FC = () => {
 
   const videoSources: { [key: string]: string } = {
     Flower: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-flower-double.mp4.mp4',
-    Fire: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-fire-double.mp4.mp4', 
-    Staircase: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-stairs-double.mp4.mp4', 
+    Fire: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-fire-double.mp4.mp4',
+    Staircase: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-stairs-double.mp4.mp4',
     Wave: 'https://cdn.openai.com/sora-ga/dev/features/hq/feature-loop-wave-double.mp4.mp4',
   };
 
@@ -108,17 +113,15 @@ const LoopSection: React.FC = () => {
   const handleEffectChange = (effect: string) => {
     setSelectedEffect(effect);
     if (videoRef.current) {
-      videoRef.current.src = videoSources[effect]; // Cập nhật nguồn video
-      videoRef.current.load(); // Tải video mới
+      videoRef.current.src = videoSources[effect];
+      videoRef.current.load();
 
-      // Chờ video sẵn sàng trước khi phát
       const playVideo = () => {
         videoRef.current?.play().catch((error) => {
           console.error('Error playing video:', error);
         });
       };
 
-      // Lắng nghe sự kiện canplay
       videoRef.current.addEventListener('canplay', playVideo, { once: true });
     }
   };
@@ -126,17 +129,16 @@ const LoopSection: React.FC = () => {
   return (
     <Container>
       <SectionTitle>
-        <IconWrapper>
-          <LoopIcon />
-        </IconWrapper>
-        <Title>
-          <MainTitle>
-            Trim down and create seamless repeating videos
-          </MainTitle>
-          <MainTitle>
-            with <HighlightText>Loop</HighlightText>
-          </MainTitle>
-        </Title>
+        <TitleRow>
+          <IconWrapper>
+            <LoopIcon />
+          </IconWrapper>
+          <TitleText>Loop</TitleText>
+        </TitleRow>
+
+        <MainTitle>
+          Trim down and create seamless repeating videos with <HighlightText>Loop</HighlightText>
+        </MainTitle>
       </SectionTitle>
 
       <PreviewSection>

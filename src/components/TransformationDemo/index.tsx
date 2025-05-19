@@ -5,9 +5,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   gap: 64px;
-  padding: 80px 40px;
+  padding: 80px 80px;
   align-items: center;
   background: #fff;
+  justify-content: center;
 `;
 
 const CommandList = styled.div`
@@ -74,7 +75,7 @@ const transformations = [
 ];
 
 const TransformationDemo: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Start with first command selected
+  const [activeIndex, setActiveIndex] = useState(0); 
 
   return (
     <Container>
@@ -91,7 +92,7 @@ const TransformationDemo: React.FC = () => {
       </CommandList>
       <VideoContainer>
         <Video 
-          key={activeIndex} // Force video reload when source changes
+          key={activeIndex} 
           src={transformations[activeIndex].video}
           autoPlay 
           loop 

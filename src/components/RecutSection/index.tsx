@@ -34,12 +34,12 @@ const RecutText = styled.span`
 `;
 
 const Description = styled.h2`
-  font-size: 22px;
+  font-size: 30px;
   color: #000;
   max-width: 700px;
   margin: 16px auto 32px auto;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
 `;
 

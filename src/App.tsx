@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import Hero from './components/Hero';
+// import Hero from './components/Hero';
 import SoraLogo from './components/SoraLogo';
 import PresetSection from './components/PresetSection';
 import PricingSection from './components/PricingSection';
@@ -16,7 +16,6 @@ import LoopSection from './components/LoopSection';
 import ImageGrid from './components/ImageGrid';
 import ContributorsSection from './components/ContributorsSection';
 import CreatorsSection from './components/CreatorsSection';
-import FadeSection from './components/FadeSection';
 import GetStarted from './components/GetStarted';
 import Footer from './components/Footer';
 
@@ -46,6 +45,11 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: none;
     outline: none;
+    background: none;
+  }
+
+  button:focus, a:focus {
+    outline-offset: 2px;
   }
 
   html {
@@ -60,8 +64,9 @@ const AppContainer = styled.div`
 `;
 
 const MainContent = styled.main<{ $isSidebarOpen: boolean }>`
-  margin-left: ${props => props.$isSidebarOpen ? '240px' : '0'};
-  transition: margin-left 0.3s ease;
+  margin-left: ${props => (props.$isSidebarOpen ? '240px' : '0')};
+  transition: margin-left 0.3s ease;  
+  padding: 20px;
 `;
 
 const App: React.FC = () => {
@@ -74,35 +79,65 @@ const App: React.FC = () => {
   return (
     <AppContainer>
       <GlobalStyle />
-      <Navbar
-        onSidebarToggle={handleSidebarToggle}
-        isSidebarOpen={isSidebarOpen}
+      <header>
+        <Navbar
+          onSidebarToggle={handleSidebarToggle}
+          isSidebarOpen={isSidebarOpen}
+          aria-label="Main navigation"
+        />
+      </header>
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        aria-label="Sidebar menu"
       />
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        onClose={() => setIsSidebarOpen(false)} 
-      />
-      <MainContent $isSidebarOpen={isSidebarOpen}>
-        <Hero />
-        <ImageGrid />
-        <RemixSection />
-        <TransformationDemo />
-        <RecutSection />
-        <StoryboardSection />
-        <LoopSection />
-        <BlendSection />
-        <PresetSection />
-        <PricingSection />
-        <CreatorsSection />
-        <SoraLogo />
-
-        <ContributorsSection />
-        <GetStarted />
-        <Footer />
-
+      <MainContent $isSidebarOpen={isSidebarOpen} role="main">
+        <section aria-labelledby="hero-section-title">
+          {/* {<Hero /> }  */}
+        </section>
+        <section aria-labelledby="video-grid-title">
+          <ImageGrid />
+        </section>
+        <section>
+          <RemixSection />
+        </section>
+        <section>
+          <TransformationDemo />
+        </section>
+        <section>
+          <RecutSection />
+        </section>
+        <section>
+          <StoryboardSection />
+        </section>
+        <section>
+          <LoopSection />
+        </section>
+        <section>
+          <BlendSection />
+        </section>
+        <section>
+          <PresetSection />
+        </section>
+        <section>
+          <PricingSection />
+        </section>
+        <section>
+          <CreatorsSection />
+        </section>
+        <section aria-label="Brand logo">
+          <SoraLogo />
+        </section>
+        <section>
+          <ContributorsSection />
+        </section>
+        <section>
+          <GetStarted />
+        </section>
       </MainContent>
+      <Footer />
     </AppContainer>
   );
 };
 
-export default App; 
+export default App;

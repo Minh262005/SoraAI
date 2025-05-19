@@ -7,8 +7,7 @@ interface FadeSectionProps {
 }
 
 const FadeSection: React.FC<FadeSectionProps> = ({ children, threshold = 0.2, rootMargin = '-20%' }) => {
-  // Your intersection observer or animation logic here
-  return <section>{children}</section>; // Simplified example
+  return <section>{children}</section>; 
 };
 
 export default FadeSection;
