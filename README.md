@@ -41,19 +41,6 @@ yarn start
 
 The application will open in your default browser at `http://localhost:3000`.
 
-## Project Structure
-
-```
-src/
-  ├── components/
-  │   ├── Layout/
-  │   ├── Navbar/
-  │   ├── Sidebar/
-  │   ├── SearchOverlay/
-  │   └── LoginDropdown/
-  ├── App.tsx
-  └── index.tsx
-```
 
 ## Built With
 
