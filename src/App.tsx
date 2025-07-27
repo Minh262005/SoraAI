@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: 'OpenAI Sans', sans-serif;
+    font-feature-settings: "liga" on, "calt" on;
     line-height: 1.6;
     color: #000;
     background-color: #fff;
@@ -42,6 +43,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    font-family: 'OpenAI Sans', sans-serif;
+    font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: antialiased;
     cursor: pointer;
     border: none;
     outline: none;
@@ -79,6 +83,7 @@ const App: React.FC = () => {
   return (
     <AppContainer>
       <GlobalStyle />
+     
       <header>
         <Navbar
           onSidebarToggle={handleSidebarToggle}

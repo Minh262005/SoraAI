@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Container = styled.section`
   padding: 80px 20px;
@@ -88,7 +88,7 @@ const StoryboardGrid = styled.div`
 `;
 
 const StoryCard = styled.div<{ $selected?: boolean }>`
-  background: ${props => (props.$selected ? '#f8f8f8' : '#fff')};
+  background: ${(props) => (props.$selected ? "#f8f8f8" : "#fff")};
   border-radius: 12px;
   border: 1px solid #eee;
   padding: 16px;
@@ -144,10 +144,11 @@ const PreviewSection = styled.div`
 `;
 
 const StoryboardIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2.5" y="4" width="7" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-    <rect x="10.5" y="4" width="7" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-    <line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" strokeWidth="1.5" />
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+    <g stroke="currentColor" stroke-linecap="round" stroke-width="2">
+      <path d="M15.396 4.067h-6.8a2.267 2.267 0 0 0-2.268 2.267v11.335a2.267 2.267 0 0 0 2.267 2.267h6.801a2.267 2.267 0 0 0 2.268-2.267V6.334a2.267 2.267 0 0 0-2.268-2.267Z"></path>
+      <path d="M6.334 5.2H4.067A2.267 2.267 0 0 0 1.8 7.467v9.069a2.267 2.267 0 0 0 2.267 2.267h2.267M17.666 5.2h2.267A2.267 2.267 0 0 1 22.2 7.467v9.069a2.267 2.267 0 0 1-2.267 2.267h-2.267"></path>
+    </g>
   </svg>
 );
 
@@ -156,22 +157,27 @@ const StoryboardSection: React.FC = () => {
 
   const stories = [
     {
-      number: '1',
-      title: 'A vast red landscape with a docked spaceship in the distance',
-      time: '0 - 114',
-      videoSrc: 'https://cdn.openai.com/sora-ga/dev/features/md/storyboards-00-landscape.mp4.mp4',
+      number: "1",
+      title: "A vast red landscape with a docked spaceship in the distance",
+      time: "0 - 114",
+      videoSrc:
+        "https://cdn.openai.com/sora-ga/dev/features/md/storyboards-00-landscape.mp4.mp4",
     },
     {
-      number: '2',
-      title: 'Looking out from inside the spaceship, a space cowboy stands center frame',
-      time: '114 - 324',
-      videoSrc: 'https://cdn.openai.com/sora-ga/dev/features/md/storyboards-01-inside.mp4.mp4 ',
+      number: "2",
+      title:
+        "Looking out from inside the spaceship, a space cowboy stands center frame",
+      time: "114 - 324",
+      videoSrc:
+        "https://cdn.openai.com/sora-ga/dev/features/md/storyboards-01-inside.mp4.mp4 ",
     },
     {
-      number: '3',
-      title: "Detailed close-up view of astronaut's eyes framed by a knitted fabric mask",
-      time: '324 - 440',
-      videoSrc: 'https://cdn.openai.com/sora-ga/dev/features/md/storyboards-02-closeup.mp4.mp4',
+      number: "3",
+      title:
+        "Detailed close-up view of astronaut's eyes framed by a knitted fabric mask",
+      time: "324 - 440",
+      videoSrc:
+        "https://cdn.openai.com/sora-ga/dev/features/md/storyboards-02-closeup.mp4.mp4",
     },
   ];
 
@@ -187,7 +193,10 @@ const StoryboardSection: React.FC = () => {
           Storyboard
         </IconLabel>
         <Title>
-          <MainTitle>Organize and edit unique sequence of your videos on a personal timeline.</MainTitle>
+          <MainTitle>
+            Organize and edit unique sequence of your videos on a personal
+            timeline.
+          </MainTitle>
           <SubTitle></SubTitle>
         </Title>
       </SectionTitle>
@@ -204,7 +213,7 @@ const StoryboardSection: React.FC = () => {
               aria-pressed={selectedStory === index}
               aria-label={`Select scene ${story.number}: ${story.title}`}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
+                if (e.key === "Enter" || e.key === " ") {
                   setSelectedStory(index);
                 }
               }}
@@ -225,15 +234,15 @@ const StoryboardSection: React.FC = () => {
             autoPlay
             muted
             playsInline
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
           <div
             style={{
-              position: 'absolute',
+              position: "absolute",
               bottom: 8,
               left: 12,
-              color: '#fff',
-              fontSize: '12px',
+              color: "#fff",
+              fontSize: "12px",
               opacity: 0.8,
             }}
           >

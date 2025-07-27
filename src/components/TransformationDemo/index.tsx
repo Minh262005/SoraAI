@@ -30,9 +30,7 @@ const Command = styled.button<{ $active?: boolean }>`
   cursor: pointer;
   transition: color 0.2s, font-weight 0.2s;
 
-  &:hover {
-    color: #000;
-  }
+  
 `;
 
 const VideoContainer = styled.div`

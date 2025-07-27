@@ -88,10 +88,7 @@ const Video = styled.video`
 `;
 
 const BlendIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M12 4V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M17.13 4.446h-10a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-10a3 3 0 0 0-3-3Z"></path><path fill="currentColor" d="M5.13 17.446h1.5a.5.5 0 0 1 .5.5v1.5a2 2 0 0 1-2-2ZM9.13 17.946a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1.5h-2v-1.5ZM13.13 17.946a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1.5h-2v-1.5ZM17.13 17.946a.5.5 0 0 1 .5-.5h1.5a2 2 0 0 1-2 2v-1.5ZM5.38 14.046a.35.35 0 0 1 .35-.35h.8a.35.35 0 0 1 .35.35v.8a.35.35 0 0 1-.35.35h-.8a.35.35 0 0 1-.35-.35v-.8Z"></path><rect width="1.48" height="1.48" x="9.39" y="13.706" fill="currentColor" rx=".35"></rect><rect width="1.5" height="1.5" x="13.38" y="13.696" fill="currentColor" rx=".35"></rect><path fill="currentColor" d="M17.38 14.046a.35.35 0 0 1 .35-.35h.8a.35.35 0 0 1 .35.35v.8a.35.35 0 0 1-.35.35h-.8a.35.35 0 0 1-.35-.35v-.8Z"></path><rect width="2" height="2" x="7.13" y="15.446" fill="currentColor" rx=".5"></rect><rect width="2" height="2" x="11.13" y="15.446" fill="currentColor" rx=".5"></rect><path fill="currentColor" d="M15.13 15.946a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Z"></path><rect width="1" height="1" x="7.63" y="11.946" fill="currentColor" rx=".2"></rect><rect width="1" height="1" x="11.63" y="11.946" fill="currentColor" rx=".2"></rect><path fill="currentColor" d="M15.63 12.146c0-.11.09-.2.2-.2h.6c.11 0 .2.09.2.2v.6a.2.2 0 0 1-.2.2h-.6a.2.2 0 0 1-.2-.2v-.6Z"></path></svg>
 );
 
 const BlendSection: React.FC = () => {

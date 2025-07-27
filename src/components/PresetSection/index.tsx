@@ -17,9 +17,7 @@ const HeaderContainer = styled.div`
 `;
 
 const PresetIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 6h16v12H4V6zm0 0l8 6 8-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><g stroke="currentColor" stroke-width="2"><path d="M17.5 3h-11a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM4.5 17.002h15"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 7.75h6m-2-1v2M15 12.252H9m2 1v-2"></path></g></svg>
 );
 
 const IconLabel = styled.div`
@@ -55,8 +53,8 @@ const PreviewVideo = styled.video`
 
 const PresetInfo = styled.div`
   position: absolute;
-  bottom: 24px;
-  left: 24px;
+  bottom: 10px;
+  left:10px;
   background: rgba(255, 255, 255, 0.9);
   padding: 16px 20px;
   border-radius: 12px;
@@ -87,7 +85,6 @@ const PresetTab = styled.button<{ $active?: boolean }>`
   padding: 8px 0;
   border: none;
   background: none;
-  color: ${props => props.$active ? '#000' : 'rgba(0, 0, 0, 0.5)'};
   font-size: 14px;
   cursor: pointer;
   font-weight: ${props => props.$active ? '600' : '400'};
@@ -95,6 +92,7 @@ const PresetTab = styled.button<{ $active?: boolean }>`
 
   &:hover {
     color: #000;
+    background:#ffffff1f
   }
 `;
 

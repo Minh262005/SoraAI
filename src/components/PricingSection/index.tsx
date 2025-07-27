@@ -18,7 +18,6 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  color: #666;
   font-size: 16px;
 `;
 
